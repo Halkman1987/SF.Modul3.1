@@ -12,7 +12,7 @@ class Mainclass
         bool MyPet = true;
         double Leg = 43.5;
 
-        Console.WriteLine("Меня зовут" +  MyName);
+        Console.WriteLine("Меня зовут" + MyName);
         Console.WriteLine("Мне" +  MyAge,  "лет");
         Console.WriteLine("У Вас есть питомец?" +   MyPet);
         Console.WriteLine("Мой размер ноги" +   Leg);
