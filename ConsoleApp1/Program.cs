@@ -10,7 +10,6 @@ class Mainclass
         string MyName;
         MyName = "Dima";
         Console.WriteLine(MyName);
-
         Console.ReadKey();
     }
 
