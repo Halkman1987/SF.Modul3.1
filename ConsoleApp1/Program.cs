@@ -7,10 +7,15 @@ class Mainclass
 {
     public static void Main(string[] args)
     {
-        const string MyName = "Dima\n";
-        Console.WriteLine(MyName);
-        Console.WriteLine("\t\u0023");
-        Console.WriteLine("Ну вот \t\tкак-то так");
+        string MyName = "Dima";
+        byte MyAge = 34;
+        bool MyPet = true;
+        double Leg = 43.5;
+
+        Console.WriteLine("Меня зовут" +  MyName);
+        Console.WriteLine("Мне" +  MyAge,  "лет");
+        Console.WriteLine("У Вас есть питомец?" +   MyPet);
+        Console.WriteLine("Мой размер ноги" +   Leg);
         Console.ReadKey();
     }
 
