@@ -5,6 +5,10 @@ using System;
 
 class Mainclass
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="args"></param>
     public static void Main(string[] args)
     {
 
@@ -42,8 +46,8 @@ class Mainclass
         var day = (DayOfWeek)int.Parse(Console.ReadLine());
         Console.WriteLine("Твой любимый день {0} ", day);
         Console.ReadKey();*/
-       
-        
+
+
         Console.WriteLine("Введите свое имя");
         var name = Console.ReadLine();
         Console.WriteLine("Введите свой возраст");
