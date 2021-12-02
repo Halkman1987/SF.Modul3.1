@@ -1,7 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
-
-using System;
+﻿using System;
 
 class Mainclass
 {
@@ -29,7 +26,7 @@ class Mainclass
         int age = int.Parse(Console.ReadLine());
         Console.WriteLine("Ваше имя {0} и ваш возраст {1} ", name, age);
         Console.ReadKey();
-*//*
+*/ /*
         Console.Write("Enter your name: ");
         string name = Console.ReadLine();
         Console.Write("Enter your age: ");
@@ -60,10 +57,6 @@ class Mainclass
         Console.WriteLine("Your favorite day is {0}", day);
         Console.ReadKey();
 
-
-
-
     }
 
 }
-
