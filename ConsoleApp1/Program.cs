@@ -39,7 +39,7 @@ class Mainclass
 */
 
         // Условия If to else... погнали
-        {
+        /*{
             var a = 6;
             var b = 7;
 
@@ -86,7 +86,46 @@ class Mainclass
 
                     Console.WriteLine("Ваш цвет cyan");
                 }
+
                 
+            }
+
+
+        }
+*/
+
+        //   Switch.........в действии )
+
+        {
+            Console.WriteLine("Напишите свой любимый цвет на англ яз с маленькой буквы");
+
+            var color = Console.ReadLine();
+
+            switch (color)
+            {
+                case "red":
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Ваш цвет red ");
+                    break;
+
+                case "green":
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Ваш цвет green");
+                    break;
+
+                default:
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    Console.WriteLine("Ваш цвет yellow");
+                    break;
+
+
+
             }
         }
     }
