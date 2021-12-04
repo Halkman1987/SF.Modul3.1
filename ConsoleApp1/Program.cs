@@ -15,6 +15,11 @@ class Mainclass
         Console.WriteLine("Мой размер ноги" +   Leg);
         Console.ReadKey();
     }
+    
+    //Финальное задание по модулю 
+    {
 
+       
 }
+
 
