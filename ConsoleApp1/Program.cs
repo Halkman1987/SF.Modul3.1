@@ -117,6 +117,13 @@ class Mainclass
                     Console.WriteLine("Ваш цвет green");
                     break;
 
+                case "green":
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Ваш цвет green ");
+                    break;
+
                 default:
                     Console.BackgroundColor = ConsoleColor.Yellow;
                     Console.ForegroundColor = ConsoleColor.Red;
