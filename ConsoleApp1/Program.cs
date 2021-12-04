@@ -9,43 +9,45 @@ class Mainclass
     public static void Main(string[] args)
     {
         {
-            /*const string MyName = "Dima\n";
-        Console.WriteLine(MyName);
-        Console.WriteLine("\t\u0023");
-        Console.WriteLine("Ну вот \t\t как-то так");
-        Console.ReadKey();*/
+            const string MyName = "Dima\n";
+            Console.WriteLine(MyName);
+            Console.WriteLine("\t\u0023");
+            Console.WriteLine("Ну вот \t\t как-то так");
+            Console.ReadKey();
 
-            /* Console.Write("Напиши возраст:");
-             int age = Convert.ToInt32(Console.ReadLine());
-             Console.WriteLine("Ваш возраст {0}", age);
-             Console.ReadKey();*/
+            Console.Write("Напиши возраст:");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваш возраст {0}", age);
+            Console.ReadKey();
 
         }
 
 
 
-    
+        {
+            Console.WriteLine("Введите свое имя");
+            var name = Console.ReadLine();
+            Console.WriteLine("Введите свой возраст");
+            var age = checked((byte)int.Parse(Console.ReadLine()));
+            Console.WriteLine("Your name is {0} and age is {1} ", name, age);
 
+            Console.Write("What is your favorite day of week? ");
 
-        /* Console.WriteLine("Введите свое имя");
-         var name = Console.ReadLine();
-         Console.WriteLine("Введите свой возраст");
-         var age = checked((byte)int.Parse(Console.ReadLine()));
-         Console.WriteLine("Your name is {0} and age is {1} ", name, age);
+            var day = (DayOfWeek)int.Parse(Console.ReadLine());
+            Console.WriteLine("Your favorite day is {0}", day);
+            Console.ReadKey();
+        }    
+        
 
-         Console.Write("What is your favorite day of week? ");
-
-         var day = (DayOfWeek)int.Parse(Console.ReadLine());
-         Console.WriteLine("Your favorite day is {0}", day);
-         Console.ReadKey();*/
+       
 
 
 
         // Инкремент и декремент 
         {
-            /* int counter = 10;
-             Console.WriteLine("Value:{0} decrement:{1}", counter, --counter);
-             Console.ReadKey();*/
+            int counter = 10;
+            Console.WriteLine("Value:{0} decrement:{1}", counter, --counter);
+            Console.ReadKey();
         }
 
 
@@ -67,7 +69,7 @@ class Mainclass
 
         }
 
-        //Через TryParse и bool значение
+        //  Через TryParse и bool значение
         {
            /* Console.Write("Укажите свой возраст:");
             int age;
@@ -113,7 +115,7 @@ class Mainclass
             Console.WriteLine("Твой любимый день {0} ", day);
             Console.ReadKey();
         }
-        /*
+        
 
                 //Семафор перечисления
                 enum Semaphore
@@ -121,7 +123,7 @@ class Mainclass
                 Red = 100,
                 Yellow = 200,
                 Green = 300
-                }*/
+                }
 
     }
 
