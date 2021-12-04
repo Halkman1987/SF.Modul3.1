@@ -8,9 +8,9 @@ class Mainclass
     /// <param name="args"></param>
     public static void Main(string[] args)
     {
-
+        gsfвывывсвыifjvoier.......
         {
-            /*const string MyName = "Dima\n";
+            /*const string MyName = "Dima\n";к
         Console.WriteLine(MyName);
         Console.WriteLine("\t\u0023");
         Console.WriteLine("Ну вот \t\t как-то так");
