@@ -110,11 +110,11 @@ class Mainclass
                     Console.WriteLine("Ваш цвет red ");
                     break;
 
-                case "green":
+                case "cyan":
                     Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.ForegroundColor = ConsoleColor.Black;
 
-                    Console.WriteLine("Ваш цвет green");
+                    Console.WriteLine("Ваш цвет cyan");
                     break;
 
                 case "green":
