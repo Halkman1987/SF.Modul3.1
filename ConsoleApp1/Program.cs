@@ -296,51 +296,219 @@ class Mainclass
           }
   */
         // Вносим режим continue
+        /*  {
+              Console.WriteLine("Цикл While");
+              int k = 0;
+
+              while (k < 5)
+              {
+                  Console.WriteLine("Напишите любой цвет");
+                  Console.WriteLine(k);
+                  k++;
+
+                  switch (Console.ReadLine())
+                  {
+                      case "red":
+                          Console.BackgroundColor = ConsoleColor.Red;
+                          Console.ForegroundColor = ConsoleColor.Black;
+
+                          Console.WriteLine("Ваш цвет красный");
+                          break;
+
+                      case "green":
+                          Console.BackgroundColor = ConsoleColor.Green;
+                          Console.ForegroundColor = ConsoleColor.Black;
+
+                          Console.WriteLine("Ваш цвет зеленый");
+                          break;
+
+                      case "cyan":
+                          Console.BackgroundColor = ConsoleColor.Cyan;
+                          Console.ForegroundColor = ConsoleColor.Black;
+
+                          Console.WriteLine("Ваш цвет синий");
+                          break;
+
+                      default:
+                          Console.BackgroundColor = ConsoleColor.Yellow;
+
+                          Console.ForegroundColor = ConsoleColor.Black;
+
+                          Console.WriteLine("Ваш цвет желтый");
+                          break;
+                         // continue;
+
+                  }
+
+              }   
+
+
+
+
+
+          }*/
+        /* 
+         string[] favcolors = new string[3];
+
+         for (int i = 0; i < favcolors.Length; i++)
+         {
+             Console.WriteLine("Введите любимый цвет номер {0}", i + 1);
+             favcolors[i] = Console.ReadLine();
+         }
+
+         foreach (var color in favcolors)
+         {
+             switch (color)
+             {
+                 case "red":
+                     Console.BackgroundColor = ConsoleColor.Red;
+                     Console.ForegroundColor = ConsoleColor.Black;
+
+                     Console.WriteLine("Ваш цвет красный");
+                     break;
+
+                 case "green":
+                     Console.BackgroundColor = ConsoleColor.Green;
+                     Console.ForegroundColor = ConsoleColor.Black;
+
+                     Console.WriteLine("Ваш цвет зеленый");
+                     break;
+
+                 case "cyan":
+                     Console.BackgroundColor = ConsoleColor.Cyan;
+                     Console.ForegroundColor = ConsoleColor.Black;
+
+                     Console.WriteLine("Ваш цвет синий");
+                     break;
+
+                 default:
+                     Console.BackgroundColor = ConsoleColor.Yellow;
+
+                     Console.ForegroundColor = ConsoleColor.Black;
+
+                     Console.WriteLine("Ваш цвет желтый");
+                     break;
+             }
+
+
+         }
+ */
+        /* {
+             Console.WriteLine("Напишите свое имя:");
+             var name = Console.ReadLine();
+
+             Console.Write("Выведем ваши имя по буквам в обратном порядке:");
+
+             for (var i = name.Length - 1; i >= 0; i--)
+             {
+                 Console.Write(name[i] + " ");
+             }
+             Console.ReadKey();
+         }*/
+        /*var arr = new int[] { 5, 4, 1, 9, 2, 8 };
+        var l = arr.Length-1;
+        //for (var i = 0; i <=l ; i++)
+        Console.WriteLine(arr[0]);
+        //arr[1]
+        Console.ReadKey();*/
+
+
+        // Выводим колличество строк и колонок массива
+        int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 } };
+
+        for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
         {
-            Console.WriteLine("Цикл While");
-            int k = 0;
+            for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
+                Console.Write(array[i, k] + " ");
 
-            while (k < 5)
-            {
-                Console.WriteLine("Напишите любой цвет");
-                Console.WriteLine(k);
-                k++;
-
-                switch (Console.ReadLine())
-                {
-                    case "red":
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Ваш цвет красный");
-                        break;
-
-                    case "green":
-                        Console.BackgroundColor = ConsoleColor.Green;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Ваш цвет зеленый");
-                        break;
-
-                    case "cyan":
-                        Console.BackgroundColor = ConsoleColor.Cyan;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Ваш цвет синий");
-                        break;
-
-                    default:
-                        continue;
-     
-                }
-                
-            }   
-            
-
-
-
-
+            Console.WriteLine();
         }
+
+
+        // Перебор начинается по столбцам
+        int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 } };
+
+
+
+        for (int i = 0; i < array.GetUpperBound(1) + 1; i++)
+
+        {
+            for (int k = 0; k < array.GetUpperBound(0) + 1; k++)
+                Console.Write(array[k, i] + " ");
+            Console.WriteLine();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Сортировка массива по возрастанию
+
+        var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
+        int min;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            for (int j = i + 1; j < arr.Length; j++)
+            {
+                if (arr[i] > arr[j])
+                {
+                    min = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = min;
+                }
+            }
+        }
+        foreach (var i in arr)
+        {
+            Console.Write(i);
+        }
+
+
+
+        // Задание найти сумму всех элементов
+
+        var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
+        int su = 0;
+        foreach (var s in arr)
+        {
+            su += s ;
+        }
+        Console.WriteLine(su);
+
+
+       
+
+
+
+
+
+
+
+
+
+
+        //Console.Write("Количество строк: ");
+        //Console.WriteLine(array.GetUpperBound(0) + 1 + " ");
+
+        //Console.Write("Количество колонок: ");
+        //Console.WriteLine(array.GetUpperBound(1) + 1 + " ");
+
+        /*foreach (int i in array)
+        {
+            Console.Write(i + "");
+        }*/
 
 
 

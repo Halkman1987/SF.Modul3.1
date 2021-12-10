@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VB\\TestRep\\SF.Modul3.1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "D:\\Source\\Repos\\SF.Modules\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\VB\\TestRep\\SF.Modul3.1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "D:\\Source\\Repos\\SF.Modules\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VB\\TestRep\\SF.Modul3.1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "D:\\Source\\Repos\\SF.Modules\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\VB\\TestRep\\SF.Modul3.1\\ConsoleApp1\\ConsoleApp1.csproj",
-        "packagesPath": "C:\\Users\\Дмитрий\\.nuget\\packages\\",
-        "outputPath": "C:\\VB\\TestRep\\SF.Modul3.1\\ConsoleApp1\\obj\\",
+        "projectPath": "D:\\Source\\Repos\\SF.Modules\\ConsoleApp1\\ConsoleApp1.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Source\\Repos\\SF.Modules\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Дмитрий\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
