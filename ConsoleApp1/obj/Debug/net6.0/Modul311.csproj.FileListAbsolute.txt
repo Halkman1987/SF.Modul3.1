@@ -1,0 +1,15 @@
+C:\VB\Modul3\for test modul\ConsoleApp1\bin\Debug\net6.0\Modul311.exe
+C:\VB\Modul3\for test modul\ConsoleApp1\bin\Debug\net6.0\Modul311.deps.json
+C:\VB\Modul3\for test modul\ConsoleApp1\bin\Debug\net6.0\Modul311.runtimeconfig.json
+C:\VB\Modul3\for test modul\ConsoleApp1\bin\Debug\net6.0\Modul311.dll
+C:\VB\Modul3\for test modul\ConsoleApp1\bin\Debug\net6.0\ref\Modul311.dll
+C:\VB\Modul3\for test modul\ConsoleApp1\bin\Debug\net6.0\Modul311.pdb
+C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.csproj.AssemblyReference.cache
+C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.GeneratedMSBuildEditorConfig.editorconfig
+C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.AssemblyInfoInputs.cache
+C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.AssemblyInfo.cs
+C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.csproj.CoreCompileInputs.cache
+C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.dll
+C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\ref\Modul311.dll
+C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.pdb
+C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.genruntimeconfig.cache

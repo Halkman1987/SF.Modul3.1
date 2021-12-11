@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VB\\Modul3\\Modul31\\ConsoleApp1\\Modul311.csproj": {}
+    "C:\\VB\\Modul3\\for test modul\\ConsoleApp1\\Modul311.csproj": {}
   },
   "projects": {
-    "C:\\VB\\Modul3\\Modul31\\ConsoleApp1\\Modul311.csproj": {
+    "C:\\VB\\Modul3\\for test modul\\ConsoleApp1\\Modul311.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VB\\Modul3\\Modul31\\ConsoleApp1\\Modul311.csproj",
+        "projectUniqueName": "C:\\VB\\Modul3\\for test modul\\ConsoleApp1\\Modul311.csproj",
         "projectName": "Modul311",
-        "projectPath": "C:\\VB\\Modul3\\Modul31\\ConsoleApp1\\Modul311.csproj",
+        "projectPath": "C:\\VB\\Modul3\\for test modul\\ConsoleApp1\\Modul311.csproj",
         "packagesPath": "C:\\Users\\Дмитрий\\.nuget\\packages\\",
-        "outputPath": "C:\\VB\\Modul3\\Modul31\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\VB\\Modul3\\for test modul\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Дмитрий\\AppData\\Roaming\\NuGet\\NuGet.Config",
