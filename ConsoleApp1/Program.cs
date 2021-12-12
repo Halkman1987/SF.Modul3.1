@@ -1,16 +1,26 @@
 ﻿using System;
 
 class MainClass
-{
-
+{/*
+    static string GetDataFromConsole()
+    {
+        return Console.ReadLine();
+    }
     static string ShowColor()
     {
-        for (int i = 0; i < 3; i++)
+        var favcolors = new string[3]; //объявляем массив из трех элементов
+        //Console.WriteLine("Напишите цвета :");
+        
+        for (int i = 0; i < favcolors.Length; i++)
         {
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-            var color = Console.ReadLine();
+            
+           favcolors[i] = ShowColor();
 
-
+        }
+        Console.WriteLine("Ваши любимые цвета :");
+        foreach (var color in favcolors)
+        {
+            Console.WriteLine(color);
 
             switch (color)
             {
@@ -41,11 +51,11 @@ class MainClass
                     break;
 
             }
-            return color;
-
+           // return color;
         }
+        
+        Console.ReadKey();
     }
-
     public static void Main(string[] args)
     {
 
@@ -66,4 +76,38 @@ class MainClass
 
 
     }
+*/
+
+    static int[] GetArrayFromConsole()
+    {
+        var result = new int[5];
+
+        for (int i = 0; i < result.Length; i++)
+        {
+            Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+            result[i] = int.Parse(Console.ReadLine());
+        }
+        int tmp = 0;
+        for (int j = 0;j < result.Length; j++)
+        {
+            for (int k =0 + 1; k < result.Length; k++)
+            {
+                if (result[j] > result[k])
+                {
+                    tmp = result[j];
+                    result[j] = result[k];
+                    result[k] = tmp;
+
+                }
+                Console.WriteLine();
+            }
+            
+        }
+        foreach (var res in result)
+        {
+            Console.Write(res);
+        }
+        return result;
+    }
+
 }
