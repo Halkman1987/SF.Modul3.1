@@ -2,77 +2,129 @@
 
 class Mainclass
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="args"></param>
     public static void Main(string[] args)
     {
-                (string name, string family, string login, int loginlength, bool pet, double age, string[] color) User;
-
-        for (int j = 0; j < 3; j++)
         {
-            Console.WriteLine("Введите имя пользователя : ");
-            User.name = Console.ReadLine();
+            const string MyName = "Dima\n";
+            Console.WriteLine(MyName);
+            Console.WriteLine("\t\u0023");
+            Console.WriteLine("Ну вот \t\t как-то так");
+            Console.ReadKey();
 
-            Console.WriteLine("Введите фамилию пользователя : ");
-            User.family = Console.ReadLine();
+            Console.Write("Напиши возраст:");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваш возраст {0}", age);
+            Console.ReadKey();
 
-            Console.WriteLine("Введите логин пользователя : ");
-            User.login = Console.ReadLine();
-            User.loginlength = User.login.Length;
-            Console.WriteLine("Длинна логин пользователя : {0}", User.loginlength);
-            Console.WriteLine("Имеется ли у вас питомец Да/Нет : ");
-            var result = Console.ReadLine();
-            if (result == "да")
-            {
-                User.pet = true;
-            }
-            else
-            {
-                User.pet = false;
-            }
-            Console.WriteLine("Введите ваш возраст : ");
-            User.age = double.Parse(Console.ReadLine());
-            User.color = new string[3];
-            Console.WriteLine("Введите три любимых цвета :");
-            for (int i = 0; i < User.color.Length; i++)
-            {
-                User.color[i] = Console.ReadLine();
-            }
-            Console.WriteLine();
         }
-                Console.ReadKey();
+
+
+
+        {
+            Console.WriteLine("Введите свое имя");
+            var name = Console.ReadLine();
+            Console.WriteLine("Введите свой возраст");
+            var age = checked((byte)int.Parse(Console.ReadLine()));
+            Console.WriteLine("Your name is {0} and age is {1} ", name, age);
+
+            Console.Write("What is your favorite day of week? ");
+
+            var day = (DayOfWeek)int.Parse(Console.ReadLine());
+            Console.WriteLine("Your favorite day is {0}", day);
+            Console.ReadKey();
+        }    
+        
+
+       
+
+
+
+        // Инкремент и декремент 
+        {
+            int counter = 10;
+            Console.WriteLine("Value:{0} decrement:{1}", counter, --counter);
+            Console.ReadKey();
+        }
+
+
+
+        //конвертирование строки в числовое значение
+        {
+            /*Console.Write("Укажите свой возраст:");
+            int age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ваш Возраст {0}", age);
+            Console.ReadKey();*/
+        }
+
+        //Конвертирование через Parse и TryParse 
+        {
+            /*Console.Write("Укажите свой возраст:");
+            int age = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ваш Возраст {0}", age);
+            Console.ReadKey();*/
+
+        }
+
+        //  Через TryParse и bool значение
+        {
+           /* Console.Write("Укажите свой возраст:");
+            int age;
+            bool iscorrect = int.TryParse(Console.ReadLine(), out age);
+            Console.WriteLine("Ваш Возраст {0}", age);
+            Console.ReadKey();*/
+        }
+
+        //Продолжаем развлекаться...вводим возраст больше byte. Но если указать
+        //   int intage = age;
+        //   Console.WriteLine("Your name is {0} and age is {1} ", name, intage); произойдет процесс расширения переменной age в intage
+        {
+           /* Console.Write("Ваше имя ");
+            string name = Console.ReadLine();
+            Console.Write("Ваш возраст : ");
+            byte age = (byte)int.Parse(Console.ReadLine());
+            Console.WriteLine("Ваше имя {0} и ваш возраст {1} ", name, age);
+            Console.ReadKey();*/
+
+        }
+        // Проверка конвертации посредством checked
+        {
+            /*Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            Console.Write("Enter your age: ");
+            byte age = checked((byte)int.Parse(Console.ReadLine()));
+            Console.WriteLine("Your name is {0} and age is {1} ", name, age);
+            Console.Write("какой твой любимый день недели?: ");
+            DayOfWeek day = (DayOfWeek)int.Parse(Console.ReadLine());
+            Console.WriteLine("Твой любимый день {0} ", day);
+            Console.ReadKey();*/
+        }
+
+        //Объявление неявной типизации через переменную var, она сама определяет тип по присвоенному значению переменной
+        {
+            Console.Write("Введите свое имя:");
+            var name = Console.ReadLine();
+            Console.Write("Введите свой возраст:");
+            var age = checked((byte)int.Parse(Console.ReadLine()));
+            Console.WriteLine("Ваше имя {0} и возраст {1}", name, age);
+            Console.WriteLine("Ваш любимый день недели?");
+            var day = (DayOfWeek)int.Parse(Console.ReadLine());
+            Console.WriteLine("Твой любимый день {0} ", day);
+            Console.ReadKey();
+        }
+        
+
+                //Семафор перечисления
+                enum Semaphore
+                {
+                Red = 100,
+                Yellow = 200,
+                Green = 300
+                }
 
     }
+
 }
-
-// ----------------------------Анкета  о Питомце ---------------------------
-
-//        (string Name, string Type, double Age, int NameCount) Pet;
-//        Console.WriteLine("Введите имя питомца :");
-//        Pet.Name = Console.ReadLine();
-//        Console.WriteLine("Введите тип питомца :");
-//        Pet.Type = Console.ReadLine();
-//        Console.WriteLine("Введите возраст питомца :");
-//        Pet.Age = Double.Parse( Console.ReadLine());
-//        Pet.NameCount = Pet.Name.Length;
-//        Console.WriteLine("Длина имени питомца : {0} ", Pet.NameCount);
-//------------------------------------------------------------------------------------------------
-//var (name, age) = ("Dima", 33);
-//Console.WriteLine("You name :{0}", name);
-//Console.WriteLine("You age : {0}", age);
-
-//Console.Write("Insert you name:");
-//name = Console.ReadLine();
-//Console.Write("Insert you age :");
-//age = Convert.ToInt32(Console.ReadLine());
-
-//Console.WriteLine("You name: {0} and  age :{1}", name, age);
-
-
-
-//(string name, int age) anketa;
-//Console.WriteLine("Ваше имя :");
-//anketa.name = Console.ReadLine();
-//Console.WriteLine("Введите ваш возраст цифрами :");
-//anketa.age = Convert.ToInt32(Console.ReadLine());
-
-//Console.WriteLine("Ваше имя :{0} ", anketa.name);
-//Console.WriteLine("Ваш возраст :{0} ", anketa.age);
