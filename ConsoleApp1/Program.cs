@@ -1,43 +1,72 @@
-﻿using System;
+﻿
+using System;
 
 class MainClass
-   {
-    static void Main(string[] args);
+{
+
+    static string ShowColor()
     {
-     GetArrayFromConsole();
+        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+        var color = Console.ReadLine();
+
+        switch (color)
+        {
+            case "red":
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is red!");
+                break;
+
+            case "green":
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is green!");
+                break;
+            case "cyan":
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is cyan!");
+                break;
+            default:
+                Console.BackgroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.Red;
+
+                Console.WriteLine("Your color is yellow!");
+                break;
+        }
+        return color;
     }
 
-
-       static int[] GetArrayFromConsole();
+    public static void Main(string[] args)
     {
-        var result = new int[5];
 
-        for (int i = 0; i < result.Length; i++)
-        {
-            Console.WriteLine("Введите элемент массива номер {0}", i + 1);
-            result[i] = int.Parse(Console.ReadLine());
-        }
-        int tmp = 0;
-        for (int j = 0;j < result.Length; j++)
-        {
-            for (int k =0 + 1; k < result.Length; k++)
-            {
-                if (result[j] > result[k])
-                {
-                    tmp = result[j];
-                    result[j] = result[k];
-                    result[k] = tmp;
+        var (name, age) = ("Евгения", 27);
 
-                }
-                Console.WriteLine();
-            }
-            
-        }
-        foreach (var res in result)
+        Console.WriteLine("Мое имя: {0}", name);
+        Console.WriteLine("Мой возраст: {0}", age);
+
+        Console.Write("Введите имя: ");
+        name = Console.ReadLine();
+        Console.Write("Введите возрас с цифрами:");
+        age = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Ваше имя: {0}", name);
+        Console.WriteLine("Ваш возраст: {0}", age);
+
+        // ShowColor();
+        var favcolor = new string[3];
+        for (int i =0; i < favcolor.Length; i++)
         {
-            Console.Write(res);
+            favcolor[i] = ShowColor();
         }
-        
-    }
-}
+        Console.WriteLine("ваши любимые цвета");
+        foreach(var color in favcolor)
+        {
+            Console.WriteLine(color);
+        }
+        Console.ReadKey();
+    } 
 }
