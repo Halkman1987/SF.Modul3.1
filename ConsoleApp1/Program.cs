@@ -1,5 +1,5 @@
 ﻿using System;
-
+//проверка гитигнор
 class Mainclass
 {
     /// <summary>
