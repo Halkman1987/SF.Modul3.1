@@ -1,6 +1,6 @@
 /.vs
 *.suo
 *.sqlite
-obj
-bin
-++
+obj/
+bin/
+
