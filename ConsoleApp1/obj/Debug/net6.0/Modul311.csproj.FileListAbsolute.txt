@@ -13,3 +13,18 @@ C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.dll
 C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\ref\Modul311.dll
 C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.pdb
 C:\VB\Modul3\for test modul\ConsoleApp1\obj\Debug\net6.0\Modul311.genruntimeconfig.cache
+D:\Source\Repos\SF.Modules\ConsoleApp1\bin\Debug\net6.0\Modul311.exe
+D:\Source\Repos\SF.Modules\ConsoleApp1\bin\Debug\net6.0\Modul311.deps.json
+D:\Source\Repos\SF.Modules\ConsoleApp1\bin\Debug\net6.0\Modul311.runtimeconfig.json
+D:\Source\Repos\SF.Modules\ConsoleApp1\bin\Debug\net6.0\Modul311.dll
+D:\Source\Repos\SF.Modules\ConsoleApp1\bin\Debug\net6.0\ref\Modul311.dll
+D:\Source\Repos\SF.Modules\ConsoleApp1\bin\Debug\net6.0\Modul311.pdb
+D:\Source\Repos\SF.Modules\ConsoleApp1\obj\Debug\net6.0\Modul311.csproj.AssemblyReference.cache
+D:\Source\Repos\SF.Modules\ConsoleApp1\obj\Debug\net6.0\Modul311.GeneratedMSBuildEditorConfig.editorconfig
+D:\Source\Repos\SF.Modules\ConsoleApp1\obj\Debug\net6.0\Modul311.AssemblyInfoInputs.cache
+D:\Source\Repos\SF.Modules\ConsoleApp1\obj\Debug\net6.0\Modul311.AssemblyInfo.cs
+D:\Source\Repos\SF.Modules\ConsoleApp1\obj\Debug\net6.0\Modul311.csproj.CoreCompileInputs.cache
+D:\Source\Repos\SF.Modules\ConsoleApp1\obj\Debug\net6.0\Modul311.dll
+D:\Source\Repos\SF.Modules\ConsoleApp1\obj\Debug\net6.0\ref\Modul311.dll
+D:\Source\Repos\SF.Modules\ConsoleApp1\obj\Debug\net6.0\Modul311.pdb
+D:\Source\Repos\SF.Modules\ConsoleApp1\obj\Debug\net6.0\Modul311.genruntimeconfig.cache

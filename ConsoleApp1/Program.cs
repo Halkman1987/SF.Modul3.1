@@ -3,10 +3,11 @@ using System;
 
 class MainClass
 {
-
-    static string ShowColor()
+      //---------------------------МОдуль 5----------------------
+    static string ShowColor(string username, int userage)
     {
-        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+        
+        Console.WriteLine("{0} которуму {1} лет,\nНапишите свой любимый цвет на английском с маленькой буквы ",username, userage);
         var color = Console.ReadLine();
 
         switch (color)
@@ -42,8 +43,9 @@ class MainClass
 
     public static void Main(string[] args)
     {
-
-        var (name, age) = ("Евгения", 27);
+        var (name,name1, age) = ("Евгения", "Анавасий" ,27); //Довавляю новую переменную name1("Анавасий") и вписываю обращение к ней четез метод ShowColor( всё получилось )
+        
+       
 
         Console.WriteLine("Мое имя: {0}", name);
         Console.WriteLine("Мой возраст: {0}", age);
@@ -53,14 +55,14 @@ class MainClass
         Console.Write("Введите возрас с цифрами:");
         age = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Ваше имя: {0}", name);
-        Console.WriteLine("Ваш возраст: {0}", age);
+        Console.WriteLine("Ваше имя: {0} и ваш возраст {1}", name,age);
+        //Console.WriteLine("Ваш возраст: {0}", age);
 
         // ShowColor();
         var favcolor = new string[3];
         for (int i =0; i < favcolor.Length; i++)
         {
-            favcolor[i] = ShowColor();
+            favcolor[i] = ShowColor(name1,age);
         }
         Console.WriteLine("ваши любимые цвета");
         foreach(var color in favcolor)
