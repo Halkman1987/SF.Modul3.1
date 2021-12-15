@@ -140,3 +140,56 @@ public static void Main(string[] args)
     }
     Console.ReadKey();
 }
+
+
+//------------------------------------Разбивка метода на два - ввод с консоли и сортировка -----------------------------
+//public static void Main(string[] args)
+//{
+
+//    var arra = GetArrayFromConsole();// в arra  записываем значения полученные из консоли 
+//    foreach (var t in arra)
+//    {
+//        Console.Write(t);
+//    }
+//    Console.WriteLine(" Вывод сортированного массива :");
+
+
+//    //var rar = 
+//    SortArray(arra);
+
+//    foreach (var t in arra)
+//    {
+//        Console.Write(t + " , ");
+//    }
+//    Console.ReadKey();
+//}
+
+
+////Вводим элементы массива положительные и отрицательные --------------------
+//static int[] GetArrayFromConsole()
+//{
+//    var result = new int[5];
+
+//    for (int i = 0; i < result.Length; i++)
+//    {
+//        Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+//        result[i] = int.Parse(Console.ReadLine());
+//    }
+//    return result;
+//}
+
+////Сортируем массив который ввели ------------------------------------------
+//static void SortArray(int[] results)
+//{
+//    int tmp = 0;
+//    for (int i = 0; i < results.Length; i++)
+//        for (int j = i + 1; j < results.Length; j++)
+//            if (results[i] > results[j])
+//            {
+//                Console.WriteLine($"{results[i]} = {results[j]}");
+//                tmp = results[i];
+//                results[i] = results[j];
+//                results[j] = tmp;
+//            }
+
+//}
