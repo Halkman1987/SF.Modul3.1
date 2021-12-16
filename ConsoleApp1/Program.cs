@@ -1,9 +1,59 @@
 ﻿
 using System;
 
+
 class MainClass
 {
-      //---------------------------МОдуль 5----------------------
+    //--------------------------- НАЧАЛО 5.3.13 ---------------------------------------
+    public static void Main(string[] args)
+    {
+
+        int Mass = SortArray(int Array);
+
+    }
+    static void SortArray(int[] Array, out int[] sorteddesc, out int[] sortedasc)
+    {
+        sorteddesc = SortArrayDesc(Array);
+        sortedasc = SortArrayAsc(Array);
+    }
+    static int[] SortArrayDesc(int[] result)
+    {
+
+        int tmp = 0;
+        for (int i = 0; i < result.Length; i++)
+            for (int j = i + 1; j < result.Length; j++)
+                if (result[i] < result[j])
+                {
+                    tmp = result[i];
+                    result[i] = result[j];
+                    result[j] = tmp;
+                }
+
+        return result;
+    }
+
+    static int[] SortArrayAsc(int[] result)
+    {
+
+        int tmp = 0;
+        for (int i = 0; i < result.Length; i++)
+            for (int j = i + 1; j < result.Length; j++)
+                if (result[i] > result[j])
+                {
+                    tmp = result[i];
+                    result[i] = result[j];
+                    result[j] = tmp;
+                }
+
+        return result;
+    }
+
+
+
+    //---------------------------- КОНЕЦ ---------------------------------------------
+
+
+    //---------------------------МОдуль 5----------------------
     static string ShowColor(string username, int userage)
     {
         
