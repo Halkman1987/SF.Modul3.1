@@ -193,3 +193,127 @@ public static void Main(string[] args)
 //            }
 
 //}
+
+
+//------------------------5.2.18 ------------------------------------
+public static void Main(string[] args)
+{
+    var Array = GetArrayFromConsole(); //объявляем переменную куда будеи передаваться значение из метода
+    ShowArray(Array, false);
+
+
+    Console.ReadKey();
+}
+
+static int[] GetArrayFromConsole(int num = 10)
+{
+    var result = new int[num];
+
+    for (int i = 0; i < result.Length; i++)
+    {
+        Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+        result[i] = int.Parse(Console.ReadLine());
+
+    }
+
+
+    return result;
+}
+
+static void ShowArray(int[] Number, bool Sort = false)
+{
+
+    var tmp = Number;
+    if (Sort)
+    {
+        tmp = SortArray(Number);
+    }
+    foreach (var item in tmp)
+    {
+        Console.Write(item + ",");
+    }
+}
+
+static int[] SortArray(int[] result)
+{
+
+    int tmp = 0;
+    for (int i = 0; i < result.Length; i++)
+        for (int j = i + 1; j < result.Length; j++)
+            if (result[i] > result[j])
+            {
+                tmp = result[i];
+                result[i] = result[j];
+                result[j] = tmp;
+            }
+
+    return result;
+}
+}
+
+//------------------------------------------Рабочий метод с сортировкой массива вводимого в консоли (5.2.14) -----------------------------------------
+
+//    public static void Main(string[] args)
+//    {
+//        var Array = GetArrayFromConsole(); //объявляем переменную куда будеи передаваться значение из метода
+
+//        foreach (var item in Array) //смотрим что ввели
+//        {
+//            Console.Write(item + ",");
+//        }
+
+//        Console.WriteLine("Вывод массива после сортировки :");
+
+//        Console.WriteLine();//отступ чтоб не путатся
+
+//        SortArray(Array);// принимаем массив из первого метода GetArrayFromConsole
+//        foreach (var item in Array)
+//        {
+//            Console.Write(item + ",");
+//        }
+//        Console.ReadKey();
+
+//        var sotrdearray = SortArray(Array);
+//        Console.WriteLine($"Выводим значение переменной : {sotrdearray}");
+//        Console.ReadKey();
+//    }
+
+
+
+//    static int[] GetArrayFromConsole(int num = 5)
+//    {
+//        var result = new int[num];
+
+//        for (int i = 0; i < result.Length; i++)
+//        {
+//            Console.WriteLine("Введите элемент массива номер {0}", i + 1);
+//            result[i] = int.Parse(Console.ReadLine());
+
+//        }
+
+
+//        return result;
+//    }
+
+//    static int[] SortArray(int[] result)
+//    {
+
+//        int tmp = 0;
+//        for (int i = 0; i < result.Length; i++)
+//            for (int j = i + 1; j < result.Length; j++)
+//                if (result[i] > result[j])
+//                {
+//                    tmp = result[i];
+//                    result[i] = result[j];
+//                    result[j] = tmp;
+//                }
+
+//        return result;
+//    }
+
+
+
+
+
+
+//}
