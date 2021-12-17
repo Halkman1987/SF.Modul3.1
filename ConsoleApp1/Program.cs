@@ -21,7 +21,7 @@ class MainClass
 
     }
 
-    private static int PowerUp(int N, byte pow)
+    private static int PowerUp(int N, byte pow) //Вычисление числа N в степени pow
     {
         if (pow == 0)
         {
