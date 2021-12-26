@@ -7,7 +7,7 @@ class Mainclass
     {
         // Очередное задание в модуле
         {
-            const string MyName = "Dima\n"; к
+            const string MyName = "Dima\n"; 
             Console.WriteLine(MyName);
             Console.WriteLine("\t\u0023");
             Console.WriteLine("Ну вот \t\t как-то так");
