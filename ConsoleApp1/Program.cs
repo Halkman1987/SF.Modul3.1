@@ -1,369 +1,200 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
 
-
-class MainClass
+class Program
 {
-    //--------------------------- НАЧАЛО 5.3.13 ---------------------------------------
+   
     public static void Main(string[] args)
     {
-
-        int Mass = SortArray(int Array);
-
-    }
-    static void SortArray(int[] Array, out int[] sorteddesc, out int[] sortedasc)
-    {
-        sorteddesc = SortArrayDesc(Array);
-        sortedasc = SortArrayAsc(Array);
-    }
-    static int[] SortArrayDesc(int[] result)
-    {
-
-        int tmp = 0;
-        for (int i = 0; i < result.Length; i++)
-            for (int j = i + 1; j < result.Length; j++)
-                if (result[i] < result[j])
-                {
-                    tmp = result[i];
-                    result[i] = result[j];
-                    result[j] = tmp;
-                }
-
-        return result;
-    }
-
-    static int[] SortArrayAsc(int[] result)
-    {
-
-        int tmp = 0;
-        for (int i = 0; i < result.Length; i++)
-            for (int j = i + 1; j < result.Length; j++)
-                if (result[i] > result[j])
-                {
-                    tmp = result[i];
-                    result[i] = result[j];
-                    result[j] = tmp;
-                }
-
-        return result;
-    }
-
-
-
-    //---------------------------- КОНЕЦ ---------------------------------------------
-
-
-    //---------------------------МОдуль 5----------------------
-    static string ShowColor(string username, int userage)
-    {
         
-        Console.WriteLine("{0} которуму {1} лет,\nНапишите свой любимый цвет на английском с маленькой буквы ",username, userage);
-        var color = Console.ReadLine();
+        Console.WriteLine("Введите ваше имя : ");
+        User user = new User();
+        user.Name = Console.ReadLine();
+        Console.WriteLine("Введите вашу фамилию : ");
+        user.Family = Console.ReadLine();
+        Console.WriteLine("Введите ваш номер телефона :");
+        user.Telephone = Console.ReadLine();
 
-        switch (color)
+        Console.WriteLine("Выберите товар и укажите количесвто :");
+        List<string> tovar = new List<string>();
+
+        Order<Delivery> order = new Order<Delivery>();
+
+        Console.WriteLine("Выберите способ доставки:\n 1 - Если нужна доставка на дом \n 2 - Если требуется доставка до Постамата \n 3 - Если вы хотите забрать товар из магазина");
+        int change = Convert.ToInt32(Console.ReadLine());
+        switch (change)
         {
-            case "red":
-                Console.BackgroundColor = ConsoleColor.Red;
-                Console.ForegroundColor = ConsoleColor.Black;
+            case 1:
+                order.Delivery = new HomeDelivery();
+                
+                Console.WriteLine("Вы выбрали доставку на дом, введите свой адрес для доставки :");
+                
+                Adress adress = new Adress();
 
-                Console.WriteLine("Your color is red!");
+                Console.WriteLine("Введите индекс вашего населеннго пункта :");
+                adress.indexcity = Console.ReadLine();
+                Console.WriteLine("Введите ваш город :");
+                adress.city = Console.ReadLine();
+                Console.WriteLine("Введите вашу улицу :");
+                adress.street = Console.ReadLine();
+                Console.WriteLine("Введите номер дома :");
+                adress.house = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Введите номер квартиры:");
+                adress.appartment = Convert.ToInt32(Console.ReadLine());
                 break;
-
-            case "green":
-                Console.BackgroundColor = ConsoleColor.Green;
-                Console.ForegroundColor = ConsoleColor.Black;
-
-                Console.WriteLine("Your color is green!");
+            case 2:
+                Console.WriteLine("Вы выбрали доставку в постамат");
+                Console.WriteLine(PickPointDelivery.boxnumber);
                 break;
-            case "cyan":
-                Console.BackgroundColor = ConsoleColor.Cyan;
-                Console.ForegroundColor = ConsoleColor.Black;
+            case 3:
+                Console.WriteLine("Вы выбрали доставку в магазин");
+                Console.WriteLine(ShopDelivery.shopadress); 
 
-                Console.WriteLine("Your color is cyan!");
-                break;
-            default:
-                Console.BackgroundColor = ConsoleColor.Yellow;
-                Console.ForegroundColor = ConsoleColor.Red;
-
-                Console.WriteLine("Your color is yellow!");
                 break;
         }
-        return color;
+
+
+        /*Product P1 = new Product(1, "Футболка с длинным рукавом", 1518.2, Product.Type.Футболка, "Вьетнам", Product.Sex.Men, "XXL");
+        Product P2 = new Product(2, "Кроссовки беговые", 5450, Product.Type.Кроссовки, "Китай", Product.Sex.Women, "38");
+        Product P3 = new Product(3, "Шорты теннисные", 2030, Product.Type.Шорты, "Тайланд", Product.Sex.Men, "L");
+        Product P4 = new Product(4, "Футболка с коротким рукавом", 1318.8, Product.Type.Футболка, "Вьетнам", Product.Sex.Men, "XL");
+        Product P5 = new Product(5, "Футболка с коротким рукавом", 1420.8, Product.Type.Футболка, "Вьетнам", Product.Sex.Women, "M");*/
+        // Ввод адреса
+
+        Random random = new Random();
+        int a;
+        a = random.Next(100);
     }
 
-    public static void Main(string[] args)
+    abstract class Delivery
     {
-        var (name,name1, age) = ("Евгения", "Анавасий" ,27); //Довавляю новую переменную name1("Анавасий") и вписываю обращение к ней четез метод ShowColor( всё получилось )
+        public Adress adress;
+    }
+    
+    class HomeDelivery : Delivery
+    {
+        public string viphome;
+       public void SetHome()
+        {
+
+        }
+    }
+
+    class PickPointDelivery : Delivery
+    {
+        static public int boxnumber = 349035;
+    }
+
+    class ShopDelivery : Delivery
+    {
+        static public string shopadress = "г.Уфа, ул.Черниковская 87 ";
+    }
+
+    // Заказ 
+    class Order<TDelivery> where TDelivery : Delivery
+    {
+        public TDelivery Delivery;
+
+        public int Number;
+
+        public string Description;
         
-       
-
-        Console.WriteLine("Мое имя: {0}", name);
-        Console.WriteLine("Мой возраст: {0}", age);
-
-        Console.Write("Введите имя: ");
-        name = Console.ReadLine();
-        Console.Write("Введите возрас с цифрами:");
-        age = Convert.ToInt32(Console.ReadLine());
-
-        Console.WriteLine("Ваше имя: {0} и ваш возраст {1}", name,age);
-        //Console.WriteLine("Ваш возраст: {0}", age);
-
-        // ShowColor();
-        var favcolor = new string[3];
-        for (int i =0; i < favcolor.Length; i++)
+        public void DisplayAddress()
         {
-            favcolor[i] = ShowColor(name1,age);
+            Console.WriteLine(Delivery.adress);
         }
-        Console.WriteLine("ваши любимые цвета");
-        foreach(var color in favcolor)
+        //private Product product;
+        //public Order (Product product)
+        //{
+        //    this.product = product;
+        //}
+
+        // ... Другие поля
+    }
+    abstract class  Product
+    {
+               public int NumTov;
+        //public string NameTov;
+        public abstract void SetTovar(int NumTov);
+       /*public Product(string nametov, int numtov)
         {
-            Console.WriteLine(color);
+            NameTov = nametov;
+            NumTov = numtov;
+        }*/
+    }
+    class Gantel: Product
+    {
+        public int much;
+        public string gantel = "Гантель";
+        public override void SetTovar(int NumTov)
+        {
+
         }
-        Console.ReadKey();
-    } 
-}
-
-static string ShowColor(string username, int userage)
-{
-
-    Console.WriteLine("{0} которуму {1} лет,\nНапишите свой любимый цвет на английском с маленькой буквы ", username, userage);
-    var color = Console.ReadLine();
-
-    switch (color)
-    {
-        case "red":
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Black;
-
-            Console.WriteLine("Your color is red!");
-            break;
-
-        case "green":
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.Black;
-
-            Console.WriteLine("Your color is green!");
-            break;
-        case "cyan":
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.ForegroundColor = ConsoleColor.Black;
-
-            Console.WriteLine("Your color is cyan!");
-            break;
-        default:
-            Console.BackgroundColor = ConsoleColor.Yellow;
-            Console.ForegroundColor = ConsoleColor.Red;
-
-            Console.WriteLine("Your color is yellow!");
-            break;
     }
-    return color;
-}
-
-public static void Main(string[] args)
-{
-    var (name, name1, age) = ("Евгения", "Анавасий", 27); //Довавляю новую переменную name1("Анавасий") и вписываю обращение к ней четез метод ShowColor( всё получилось )
-
-
-
-    Console.WriteLine("Мое имя: {0}", name);
-    Console.WriteLine("Мой возраст: {0}", age);
-
-    Console.Write("Введите имя: ");
-    name = Console.ReadLine();
-    Console.Write("Введите возрас с цифрами:");
-    age = Convert.ToInt32(Console.ReadLine());
-
-    Console.WriteLine("Ваше имя: {0} и ваш возраст {1}", name, age);
-    //Console.WriteLine("Ваш возраст: {0}", age);
-
-    // ShowColor();
-    var favcolor = new string[3];
-    for (int i = 0; i < favcolor.Length; i++)
+    class Girya : Product
     {
-        favcolor[i] = ShowColor(name1, age);
+        public string girya = "Гиря";
+        public override void SetTovar(int NumTov)
+        {
+
+        }
     }
-    Console.WriteLine("ваши любимые цвета");
-    foreach (var color in favcolor)
+    class Shanga : Product 
     {
-        Console.WriteLine(color);
+        public string shtanga = "Штанга";
+        public override void SetTovar(int NumTov)
+        {
+
+        }
     }
-    Console.ReadKey();
-}
-
-
-//------------------------------------Разбивка метода на два - ввод с консоли и сортировка -----------------------------
-//public static void Main(string[] args)
-//{
-
-//    var arra = GetArrayFromConsole();// в arra  записываем значения полученные из консоли 
-//    foreach (var t in arra)
-//    {
-//        Console.Write(t);
-//    }
-//    Console.WriteLine(" Вывод сортированного массива :");
-
-
-//    //var rar = 
-//    SortArray(arra);
-
-//    foreach (var t in arra)
-//    {
-//        Console.Write(t + " , ");
-//    }
-//    Console.ReadKey();
-//}
-
-
-////Вводим элементы массива положительные и отрицательные --------------------
-//static int[] GetArrayFromConsole()
-//{
-//    var result = new int[5];
-
-//    for (int i = 0; i < result.Length; i++)
-//    {
-//        Console.WriteLine("Введите элемент массива номер {0}", i + 1);
-//        result[i] = int.Parse(Console.ReadLine());
-//    }
-//    return result;
-//}
-
-////Сортируем массив который ввели ------------------------------------------
-//static void SortArray(int[] results)
-//{
-//    int tmp = 0;
-//    for (int i = 0; i < results.Length; i++)
-//        for (int j = i + 1; j < results.Length; j++)
-//            if (results[i] > results[j])
-//            {
-//                Console.WriteLine($"{results[i]} = {results[j]}");
-//                tmp = results[i];
-//                results[i] = results[j];
-//                results[j] = tmp;
-//            }
-
-//}
-
-
-//------------------------5.2.18 ------------------------------------
-public static void Main(string[] args)
-{
-    var Array = GetArrayFromConsole(); //объявляем переменную куда будеи передаваться значение из метода
-    ShowArray(Array, false);
-
-
-    Console.ReadKey();
-}
-
-static int[] GetArrayFromConsole(int num = 10)
-{
-    var result = new int[num];
-
-    for (int i = 0; i < result.Length; i++)
+    class Blini : Product
     {
-        Console.WriteLine("Введите элемент массива номер {0}", i + 1);
-        result[i] = int.Parse(Console.ReadLine());
+        public string blin = "Блин";
+        public override void SetTovar(int NumTov)
+        {
 
+        }
     }
 
-
-    return result;
-}
-
-static void ShowArray(int[] Number, bool Sort = false)
-{
-
-    var tmp = Number;
-    if (Sort)
+    /// <summary>
+    /// 
+    /// </summary>
+   public class Adress
     {
-        tmp = SortArray(Number);
+        private string IndexCity;
+        private string City;
+        private string Street;
+        private int House;
+        private int Appartment;
+        public string indexcity {get { return IndexCity;} set { IndexCity = value;}}
+        public string city { get { return City; } set { City = value; } }
+        public string street { get { return Street; }set { Street = value; } }
+        public int house { get { return House; } set { House = value; } }
+        public int appartment { get { return Appartment; } set { Appartment = value; } }
+
+        public Adress(string index, string city, string street,int house,int appart )
+        {
+            indexcity = index;
+            this.city = city;
+            this.street = street;
+            this.house = house;
+            appartment = appart;
+        }
+
+        public Adress()
+        {
+        }
     }
-    foreach (var item in tmp)
+    class Sklad
     {
-        Console.Write(item + ",");
+        public int SKNumber;
     }
+    public class User
+    {
+        public string Name;
+        public string Family;
+        public string Telephone; 
+    }
+
+  
 }
-
-static int[] SortArray(int[] result)
-{
-
-    int tmp = 0;
-    for (int i = 0; i < result.Length; i++)
-        for (int j = i + 1; j < result.Length; j++)
-            if (result[i] > result[j])
-            {
-                tmp = result[i];
-                result[i] = result[j];
-                result[j] = tmp;
-            }
-
-    return result;
-}
-
-
-//------------------------------------------Рабочий метод с сортировкой массива вводимого в консоли (5.2.14) -----------------------------------------
-
-//    public static void Main(string[] args)
-//    {
-//        var Array = GetArrayFromConsole(); //объявляем переменную куда будеи передаваться значение из метода
-
-//        foreach (var item in Array) //смотрим что ввели
-//        {
-//            Console.Write(item + ",");
-//        }
-
-//        Console.WriteLine("Вывод массива после сортировки :");
-
-//        Console.WriteLine();//отступ чтоб не путатся
-
-//        SortArray(Array);// принимаем массив из первого метода GetArrayFromConsole
-//        foreach (var item in Array)
-//        {
-//            Console.Write(item + ",");
-//        }
-//        Console.ReadKey();
-
-//        var sotrdearray = SortArray(Array);
-//        Console.WriteLine($"Выводим значение переменной : {sotrdearray}");
-//        Console.ReadKey();
-//    }
-
-
-
-//    static int[] GetArrayFromConsole(int num = 5)
-//    {
-//        var result = new int[num];
-
-//        for (int i = 0; i < result.Length; i++)
-//        {
-//            Console.WriteLine("Введите элемент массива номер {0}", i + 1);
-//            result[i] = int.Parse(Console.ReadLine());
-
-//        }
-
-
-//        return result;
-//    }
-
-//    static int[] SortArray(int[] result)
-//    {
-
-//        int tmp = 0;
-//        for (int i = 0; i < result.Length; i++)
-//            for (int j = i + 1; j < result.Length; j++)
-//                if (result[i] > result[j])
-//                {
-//                    tmp = result[i];
-//                    result[i] = result[j];
-//                    result[j] = tmp;
-//                }
-
-//        return result;
-//    }
-
-
-
-
-
-
-//}
