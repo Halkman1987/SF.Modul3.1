@@ -70,6 +70,7 @@ class Program
                 MyOrder.Delivery = new HomeDelivery();// Не понятно зачем эта запись, знаю лишь одно что теперь
                                                       // в классе Ордер (public TDelivery Delivery - будет понимать что это HomeDelivery()
                                                       // но обратиься кполям HomeDelivery() всё рано не могу через эту переменную или вызвать метод
+               
                 HomeDelivery homeDelivery = new HomeDelivery();// Создаю экземпляр класса т.к. не знаю как вызвать следующие два метода которые ниже
                 homeDelivery.SetHomeAdr();// Запускаем метод ввода адреса Заказчика
                 homeDelivery.Getadress(); // смотрим что ввёл Заказчик (просто чтоб проверить пока) 
@@ -78,21 +79,28 @@ class Program
             case 2:
                 Console.WriteLine("Вы выбрали доставку в постамат");
                 //MyOrder.Delivery = new PickPointDelivery(645982);// Цифры в скобках это boxnumber для присваивания номера отправления посылки, по идее должен в ордер вкладываться при необходимости
-                MyOrder.Delivery = new PickPointDelivery();
+               
                 PickPointDelivery pickPointDelivery = new PickPointDelivery();// пришлось объявить очередной экземпляр класса для вызова метода SetPickAdr(ii)
                 Console.WriteLine("Доступны следующие точки:");
                 foreach (var adr in adress.PickAdr) // Переменная-массив со списком точек выдачи из класса Адресс . но сначала должен быть вызван конструктор 
                     Console.WriteLine($"{adr}");
                 //тут надо дописать какую точки мы выбрали и она должна попасть в Ордер для вывода итоговой информации 
-                Console.WriteLine("Введите номер постамата ");
+                
+                Console.WriteLine("Выберете постамат по номеру (от 1 до {0})", adress.PickAdr.Length);
                 int ii = Convert.ToInt32(Console.ReadLine());
-                pickPointDelivery.SetPickAdr(ii);// выбираем постамат
-                Console.WriteLine(MyOrder.Delivery);
+               
+               var i =  adress.SetPickAdr(ii);// метод в котором выбираем  и показываем постамат 
+               
+                MyOrder.Delivery = new PickPointDelivery(i-1);
+                
+                Console.WriteLine($"{MyOrder.Delivery}");
+                
                 break;
 
             case 3:
                 Console.WriteLine("Вы выбрали доставку в магазин");
                 MyOrder.Delivery = new ShopDelivery();// просто так написал чтобы было
+                
                 break;
         }
         // к этому моменту по идее в MyOrder должны быть все данные о товаре , способе доставке, адрессе и сумме покупок
@@ -112,7 +120,11 @@ class Program
         MyOrder.Delivery.Getadress();
         MyOrder.DisplayAddress();
 
+        
+            void GetNumber(Adress i)
+            {
 
+            }
 
 
 
@@ -154,7 +166,7 @@ class Program
 
     }
 
-    abstract class Delivery // Базовый класс 
+    abstract class Delivery 
     {
         abstract public Adress Adress { get; set; } // посмотрел на тебя и попробовал сделать так же ( наследовать Адрес в вариантах доставкок
         abstract public int PriceDelivery { get; set; }
@@ -194,23 +206,24 @@ class Program
         public int boxnumber;//значение попадает из конструктора
         public override Adress Adress { get; set; }
         public override int PriceDelivery { get; set; }
+        public string SetPost;// поле где храниться выбранный постамат
         public void GetPrice(int num)// num количество товаров к примеру
         {
             PriceDelivery = num * 100;
         }
-        public void SetPickAdr(int num)// Выбор постамата но недоделанно 
+       /* public void SetPickAdr(int num)// Выбор постамата но недоделанно 
         {
             Console.WriteLine("Вы выбрали доставку в Постамат :");
             Console.WriteLine($"{Adress.PickAdr[num]} ");
             Console.WriteLine($" номер вашего заказа :{boxnumber}");
-        }
-        /* public PickPointDelivery(int boxnumber)// Присвоение номеру посылки ( должен в случае выбора этого типа доставки попадать в ордер
+        }*/
+         public PickPointDelivery(int i)// Присвоение номеру посылки ( должен в случае выбора этого типа доставки попадать в ордер
          {
-             this.boxnumber = boxnumber;
-         }*/
+            SetPost = Adress.PickAdr[i];
+         }
         public override void Getadress()
         {
-            Console.WriteLine($"Выводим адресс из PickPointDelivery{Adress.PickAdr[num]}");//не получилось реализовать
+            Console.WriteLine($"Выводим адресс из PickPointDelivery{Adress.PickAdr[0]}");//не получилось реализовать
         }
     }
 
@@ -361,7 +374,14 @@ class Program
         {
 
         }
-
+        public int SetPickAdr(int num)// Выбор постамата но недоделанно 
+        {
+           // var set = PickAdr[num];
+            Console.WriteLine("Вы выбрали доставку в Постамат :");
+            Console.WriteLine($"{PickAdr[num]} ");
+            // Console.WriteLine($" номер вашего заказа :{boxnumber}");
+            return num;
+        }
     }
 
     public class User
