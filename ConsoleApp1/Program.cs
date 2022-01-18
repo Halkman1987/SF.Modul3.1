@@ -93,7 +93,7 @@ class Program
                
                 MyOrder.Delivery = new PickPointDelivery(i-1);
                 
-                Console.WriteLine($"{MyOrder.Delivery}");
+                Console.WriteLine($"{pickPointDelivery.SetPost}");
                 
                 break;
 
@@ -221,6 +221,11 @@ class Program
          {
             SetPost = Adress.PickAdr[i];
          }
+
+        public PickPointDelivery()
+        {
+        }
+
         public override void Getadress()
         {
             Console.WriteLine($"Выводим адресс из PickPointDelivery{Adress.PickAdr[0]}");//не получилось реализовать
